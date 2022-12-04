@@ -3,7 +3,7 @@ import ShortForm from './pages/ShortForm';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <ShortForm />
     </div>
   );
