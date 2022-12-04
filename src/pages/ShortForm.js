@@ -1,48 +1,8 @@
 import React from 'react';
 import { useReducer } from 'react';
+import { initialState, reducer } from '../state/FormState';
 
 const ShortForm = () => {
-
-  const initialState = {
-    firstNmae: "",
-    lastName: "",
-    email: "",
-    gender: "",
-    education: "",
-    quantity: 0,
-    feedback: "",
-    term: false,
-  }
-
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "INPUT":
-        return {
-          ...state,
-          [action.payload.name]: action.payload.value,
-        };
-      case "TOGGLE":
-        return {
-          ...state,
-          term: !state.term,
-        };
-      case "INCREASE":
-        return {
-          ...state,
-          quantity: state.quantity + 1,
-        };
-      case "DECREASE":
-        return {
-          ...state,
-          quantity: state.quantity - 1,
-        };
-
-      default:
-        return state;
-    }
-  }
-
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const submit = (event) => {
